@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <img
+      src="./assets/imgs/platano.png"
+      alt="platano"
+      id="platano"
+      onclick="
+    if (document.querySelector('#platano').style.border === '2px solid red') {
+        document.querySelector('#platano').style.border = '';
+    } else {
+        document.querySelector('#platano').style.border= '2px solid red';
+        }"
+    />
+  </body>
+</html>
