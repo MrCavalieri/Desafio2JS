@@ -12,6 +12,8 @@
 
 .galeria {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sticker {

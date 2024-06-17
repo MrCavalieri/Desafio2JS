@@ -1,18 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const verificarButton = document.getElementById("verificar");
-  const stickerMessage = document.getElementById("stickerMessage");
+  const digit1 = document.getElementById("digit1");
+  const digit2 = document.getElementById("digit2");
+  const digit3 = document.getElementById("digit3");
+  const ingresarButton = document.getElementById("ingresar");
+  const resultMessage = document.getElementById("resultMessage");
 
-  verificarButton.addEventListener("click", function () {
-    const sticker1 = parseInt(document.getElementById("sticker1").value) || 0;
-    const sticker2 = parseInt(document.getElementById("sticker2").value) || 0;
-    const sticker3 = parseInt(document.getElementById("sticker3").value) || 0;
+  for (let i = 1; i <= 9; i++) {
+    const option1 = document.createElement("option");
+    option1.value = i;
+    option1.textContent = i;
+    digit1.appendChild(option1);
 
-    const totalStickers = sticker1 + sticker2 + sticker3;
+    const option2 = document.createElement("option");
+    option2.value = i;
+    option2.textContent = i;
+    digit2.appendChild(option2);
 
-    if (totalStickers <= 10) {
-      stickerMessage.textContent = `Llevas ${totalStickers} stickers.`;
+    const option3 = document.createElement("option");
+    option3.value = i;
+    option3.textContent = i;
+    digit3.appendChild(option3);
+  }
+
+  ingresarButton.addEventListener("click", function () {
+    const password = `${digit1.value}${digit2.value}${digit3.value}`;
+
+    if (password === "911") {
+      resultMessage.textContent = "password 1 correcto";
+    } else if (password === "714") {
+      resultMessage.textContent = "password 2 correcto";
     } else {
-      stickerMessage.textContent = "Llevas demasiados stickers.";
+      resultMessage.textContent = "password incorrecto";
     }
   });
 });
